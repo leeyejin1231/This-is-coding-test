@@ -10,7 +10,7 @@ queue = deque()
 queue.append((x, y))
 
 game_map = []
-for i in range(m):
+for i in range(n):
     game_map.append(list(map(int, input().split())))
 
 game_map[y][x] = 1
