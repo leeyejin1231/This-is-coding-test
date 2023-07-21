@@ -1,6 +1,7 @@
 # 치킨배달
 # 백준 15686 골드 5
 # https://www.acmicpc.net/problem/15686
+# 조합을 사용해보자!
 
 import sys
 from itertools import combinations
