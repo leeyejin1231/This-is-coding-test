@@ -27,7 +27,7 @@ def topology():
         for i in edges[now][1:]:
             indegree[i] -= 1
             if indegree[i] == 0:
-            q.append((i, index))
+                q.append((i, index))
     return result
 
 result = topology()
