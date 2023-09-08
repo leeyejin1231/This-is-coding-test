@@ -1,4 +1,4 @@
-# 크루스칼 알고리즘 (신장트리)
+# 어두운 길
 def find_parent(parent, x):
     if parent[x] != x:
         parent[x] = find_parent(parent, parent[x])
@@ -12,22 +12,23 @@ def union_parent(parent, a, b):
     else:
         parent[a] = b
 
-v, e = map(int, input().split())
-parent = [i for i in range(v+1)]
-
-edges = []
+n, m = map(int, input().split())
+graph = []
+parent = [i for i in range(n+1)]
 result = 0
+total = 0
 
-for _ in range(e):
-    a, b, cost = map(int, input().split())
-    edges.append((cost, a, b))
+for _ in range(m):
+    x, y, z = map(int, input().split())
+    total += z
+    graph.append((z, x, y))
 
-edges.sort()
+graph.sort()
 
-for edge in edges:
-    cost, a, b = edge
+for i in graph:
+    cost, a, b = i
     if find_parent(parent, a) != find_parent(parent, b):
         union_parent(parent, a, b)
         result += cost
 
-print(result)
+print(total - result)
